@@ -32,7 +32,7 @@ public class Execution {
     private Execution() {
     }
 
-    public void ordonner(String instruction) {
+    private void ordonner(String instruction) {
         String regexp = "[GDA]+";
         if (!instruction.matches(regexp)) {
             throw new TondeuseFormatException("L'instruction " + instruction + " n'est pas un ordre valide. Une suite de G, D ou A sont attendus");
@@ -52,16 +52,17 @@ public class Execution {
                     pelouse.rotationDroite(tondeuse);
                     break;
                 default:
-                    // ne devrait pas arriver
-                    throw new TondeuseFormatException("Ordre inconnu : " + ordre);
             }
         }
     }
 
     public List<String> executer(List<String> instructionsParam) {
         List<String> instructions = new ArrayList<String>(instructionsParam);
-        if (instructions.size() <= 1) {
-            return null;
+        if (instructions.size() < 3) {
+            throw new TondeuseFormatException("Il doit y avoir au moins 3 instructions : initialisation de la pelouse, initialisation de la tondeuse, deplacement de la tondeuse");
+        }
+        if (instructions.size() % 2 != 1) {
+            throw new TondeuseFormatException("Il doit y avoir un nombre impair d'instructions : initialisation de la pelouse, puis des paires d'instructions (initialisation de la tondeuse, deplacement de la tondeuse)");
         }
         List<String> retour = new ArrayList<String>();
         String instructionPelouse = instructions.remove(0);

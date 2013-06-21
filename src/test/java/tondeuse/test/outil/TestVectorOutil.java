@@ -13,6 +13,11 @@ import remy.auricoste.tondeuse.tondeuse.outil.VectorOutil;
 public class TestVectorOutil extends TestCase {
 
     @Test
+    public void testConstructeur() {
+        assertNotNull(new VectorOutil());
+    }
+
+    @Test
     public void testIdPositif() {
         assertTrue(VectorOutil.isPositif(new Vector2D(0d, 0d)));
         assertTrue(VectorOutil.isPositif(new Vector2D(1d, 3d)));

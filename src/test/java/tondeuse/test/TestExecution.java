@@ -1,8 +1,11 @@
 package tondeuse.test;
 
+import junit.framework.TestCase;
 import org.junit.Test;
 import remy.auricoste.tondeuse.tondeuse.Execution;
+import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,10 +14,22 @@ import java.util.List;
  *
  * @version $Revision$ $Date$
  */
-public class TestExecution {
+public class TestExecution extends TestCase {
 
     @Test
-    public void testTondeuses() {
+    public void testConstructeur() {
+        Execution execution = Execution.instance();
+        assertNotNull(execution);
+        assertEquals(execution, Execution.instance());
+    }
+
+    @Test
+    public void testOrdonner() {
+
+    }
+
+    @Test
+    public void testExecuter() {
         String[] ordres = new String[]{
                 "5 5",
                 "1 1 N",
@@ -25,8 +40,41 @@ public class TestExecution {
                 "AAAAAAAA"
         };
         List<String> positions = Execution.instance().executer(Arrays.asList(ordres));
-        for (String position : positions) {
-            System.out.println(position);
+        List<String> attendu = new ArrayList<String>();
+        attendu.add("1 1 E");
+        attendu.add("1 1 O");
+        attendu.add("1 0 S");
+        assertEquals(attendu, positions);
+
+        try {
+            ordres = new String[]{
+                    "5 5",
+                    "1 1 N",
+                    "GGDDAADDBAG"
+            };
+            Execution.instance().executer(Arrays.asList(ordres));
+            fail();
+        } catch (TondeuseFormatException e) {
+        }
+        try {
+            ordres = new String[]{
+                    "5 5",
+                    "1 1 N"
+            };
+            Execution.instance().executer(Arrays.asList(ordres));
+            fail();
+        } catch (TondeuseFormatException e) {
+        }
+        try {
+            ordres = new String[]{
+                    "5 5",
+                    "1 1 N",
+                    "GGDDAADDAG",
+                    "2 2 N"
+            };
+            Execution.instance().executer(Arrays.asList(ordres));
+            fail();
+        } catch (TondeuseFormatException e) {
         }
     }
 }

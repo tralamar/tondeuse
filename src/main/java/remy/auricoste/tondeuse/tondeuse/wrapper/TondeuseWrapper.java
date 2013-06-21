@@ -14,10 +14,6 @@ public class TondeuseWrapper {
 
     private Tondeuse tondeuse;
 
-    public TondeuseWrapper(Tondeuse tondeuse) {
-        this.tondeuse = tondeuse;
-    }
-
     public TondeuseWrapper(String instruction) {
         String regexp = "[0-9]+ [0-9]+ [NOES]";
         if (!instruction.matches(regexp)) {
