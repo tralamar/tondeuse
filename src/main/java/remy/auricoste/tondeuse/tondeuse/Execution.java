@@ -1,10 +1,10 @@
 package remy.auricoste.tondeuse.tondeuse;
 
+import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
 import remy.auricoste.tondeuse.tondeuse.modele.Pelouse;
+import remy.auricoste.tondeuse.tondeuse.modele.Tondeuse;
 import remy.auricoste.tondeuse.tondeuse.wrapper.PelouseWrapper;
 import remy.auricoste.tondeuse.tondeuse.wrapper.TondeuseWrapper;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
-import remy.auricoste.tondeuse.tondeuse.modele.Tondeuse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,5 +78,26 @@ public class Execution {
             }
         }
         return retour;
+    }
+
+    public static void main(String args[]) {
+        if (args.length < 6) {
+            System.out.println("Il doit y avoir au moins 6 arguments");
+            System.exit(1);
+        }
+        List<String> instructions = new ArrayList<String>();
+        instructions.add(args[0] + " " + args[1]);
+        for (int i = 2; i + 3 < args.length; i += 4) {
+            instructions.add(args[i] + " " + args[i + 1] + " " + args[i + 2]);
+            instructions.add(args[i + 3]);
+        }
+        System.out.println("instructions :");
+        for (String instruction : instructions) {
+            System.out.println(instruction);
+        }
+        System.out.println("resultats :");
+        for (String retour : Execution.instance().executer(instructions)) {
+            System.out.println(retour);
+        }
     }
 }
