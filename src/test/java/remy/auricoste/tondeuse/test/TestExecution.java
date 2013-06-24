@@ -1,4 +1,4 @@
-package tondeuse.test;
+package remy.auricoste.tondeuse.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -76,5 +76,18 @@ public class TestExecution extends TestCase {
             fail();
         } catch (TondeuseFormatException e) {
         }
+
+        ordres = new String[]{
+                "5 5",
+                "1 2 N",
+                "GAGAGAGAA",
+                "3 3 E",
+                "AADAADADDA"
+        };
+        positions = Execution.instance().executer(Arrays.asList(ordres));
+        attendu = new ArrayList<String>();
+        attendu.add("1 3 N");
+        attendu.add("5 1 E");
+        assertEquals(attendu, positions);
     }
 }

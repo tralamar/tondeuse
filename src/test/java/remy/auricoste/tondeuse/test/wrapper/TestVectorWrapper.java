@@ -1,4 +1,4 @@
-package tondeuse.test.wrapper;
+package remy.auricoste.tondeuse.test.wrapper;
 
 import junit.framework.TestCase;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;

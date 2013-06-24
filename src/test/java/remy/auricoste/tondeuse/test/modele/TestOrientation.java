@@ -1,4 +1,4 @@
-package tondeuse.test.modele;
+package remy.auricoste.tondeuse.test.modele;
 
 import junit.framework.TestCase;
 import org.junit.*;

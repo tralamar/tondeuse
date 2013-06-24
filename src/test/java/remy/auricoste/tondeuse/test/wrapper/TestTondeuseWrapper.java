@@ -1,4 +1,4 @@
-package tondeuse.test.wrapper;
+package remy.auricoste.tondeuse.test.wrapper;
 
 import junit.framework.TestCase;
 import org.junit.Test;
