@@ -1,6 +1,6 @@
-package remy.auricoste.tondeuse.tondeuse.wrapper;
+package remy.auricoste.tondeuse.wrapper;
 
-import remy.auricoste.tondeuse.tondeuse.modele.Pelouse;
+import remy.auricoste.tondeuse.modele.Pelouse;
 
 /**
  * Commentaire

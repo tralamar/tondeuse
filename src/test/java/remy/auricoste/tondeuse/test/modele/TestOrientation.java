@@ -2,7 +2,7 @@ package remy.auricoste.tondeuse.test.modele;
 
 import junit.framework.TestCase;
 import org.junit.*;
-import remy.auricoste.tondeuse.tondeuse.modele.Orientation;
+import remy.auricoste.tondeuse.modele.Orientation;
 
 /**
  * Commentaire

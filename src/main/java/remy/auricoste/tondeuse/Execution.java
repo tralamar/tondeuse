@@ -1,10 +1,10 @@
-package remy.auricoste.tondeuse.tondeuse;
+package remy.auricoste.tondeuse;
 
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
-import remy.auricoste.tondeuse.tondeuse.modele.Pelouse;
-import remy.auricoste.tondeuse.tondeuse.modele.Tondeuse;
-import remy.auricoste.tondeuse.tondeuse.wrapper.PelouseWrapper;
-import remy.auricoste.tondeuse.tondeuse.wrapper.TondeuseWrapper;
+import remy.auricoste.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.modele.Pelouse;
+import remy.auricoste.tondeuse.modele.Tondeuse;
+import remy.auricoste.tondeuse.wrapper.PelouseWrapper;
+import remy.auricoste.tondeuse.wrapper.TondeuseWrapper;
 
 import java.util.ArrayList;
 import java.util.List;

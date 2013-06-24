@@ -1,4 +1,4 @@
-package remy.auricoste.tondeuse.tondeuse.exception;
+package remy.auricoste.tondeuse.exception;
 
 /**
  * Commentaire

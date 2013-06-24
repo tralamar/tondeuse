@@ -1,4 +1,4 @@
-package remy.auricoste.tondeuse.tondeuse.outil;
+package remy.auricoste.tondeuse.outil;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 

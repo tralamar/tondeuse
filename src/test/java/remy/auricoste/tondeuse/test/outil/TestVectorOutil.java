@@ -3,7 +3,7 @@ package remy.auricoste.tondeuse.test.outil;
 import junit.framework.TestCase;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 import org.junit.*;
-import remy.auricoste.tondeuse.tondeuse.outil.VectorOutil;
+import remy.auricoste.tondeuse.outil.VectorOutil;
 
 /**
  * Commentaire

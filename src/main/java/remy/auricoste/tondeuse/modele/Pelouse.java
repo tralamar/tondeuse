@@ -1,8 +1,8 @@
-package remy.auricoste.tondeuse.tondeuse.modele;
+package remy.auricoste.tondeuse.modele;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeusePositionException;
-import remy.auricoste.tondeuse.tondeuse.outil.VectorOutil;
+import remy.auricoste.tondeuse.exception.TondeusePositionException;
+import remy.auricoste.tondeuse.outil.VectorOutil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package remy.auricoste.tondeuse.tondeuse.wrapper;
+package remy.auricoste.tondeuse.wrapper;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.exception.TondeuseFormatException;
 
 /**
  * Commentaire

@@ -2,8 +2,8 @@ package remy.auricoste.tondeuse.test.wrapper;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
-import remy.auricoste.tondeuse.tondeuse.wrapper.TondeuseWrapper;
+import remy.auricoste.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.wrapper.TondeuseWrapper;
 
 /**
  * Commentaire

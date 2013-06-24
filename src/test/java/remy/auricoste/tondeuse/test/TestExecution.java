@@ -2,8 +2,8 @@ package remy.auricoste.tondeuse.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import remy.auricoste.tondeuse.tondeuse.Execution;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.Execution;
+import remy.auricoste.tondeuse.exception.TondeuseFormatException;
 
 import java.util.ArrayList;
 import java.util.Arrays;

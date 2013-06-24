@@ -37,7 +37,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>remy.auricoste.tondeuse.tondeuse.Execution</mainClass>
+                            <mainClass>remy.auricoste.tondeuse.Execution</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -47,7 +47,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>remy.auricoste.tondeuse.tondeuse.Execution</mainClass>
+                            <mainClass>remy.auricoste.tondeuse.Execution</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

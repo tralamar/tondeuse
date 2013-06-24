@@ -3,10 +3,10 @@ package remy.auricoste.tondeuse.test.modele;
 import junit.framework.TestCase;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 import org.junit.*;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeusePositionException;
-import remy.auricoste.tondeuse.tondeuse.modele.Orientation;
-import remy.auricoste.tondeuse.tondeuse.modele.Pelouse;
-import remy.auricoste.tondeuse.tondeuse.modele.Tondeuse;
+import remy.auricoste.tondeuse.exception.TondeusePositionException;
+import remy.auricoste.tondeuse.modele.Orientation;
+import remy.auricoste.tondeuse.modele.Pelouse;
+import remy.auricoste.tondeuse.modele.Tondeuse;
 
 /**
  * Commentaire

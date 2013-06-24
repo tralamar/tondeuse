@@ -3,8 +3,8 @@ package remy.auricoste.tondeuse.test.wrapper;
 import junit.framework.TestCase;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 import org.junit.*;
-import remy.auricoste.tondeuse.tondeuse.exception.TondeuseFormatException;
-import remy.auricoste.tondeuse.tondeuse.wrapper.VectorWrapper;
+import remy.auricoste.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.wrapper.VectorWrapper;
 
 /**
  * Commentaire
