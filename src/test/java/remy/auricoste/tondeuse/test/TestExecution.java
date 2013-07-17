@@ -24,8 +24,20 @@ public class TestExecution extends TestCase {
     }
 
     @Test
-    public void testOrdonner() {
-
+    public void testExecuterExceptionPosition() {
+        String[] ordres = new String[]{
+                "5 5",
+                "1 1 N",
+                "DD",
+                "1 1 N",
+                "GA"
+        };
+        try {
+            Execution.instance().executer(Arrays.asList(ordres));
+        } catch (RuntimeException e) {
+            return;
+        }
+        fail();
     }
 
     @Test
@@ -33,16 +45,16 @@ public class TestExecution extends TestCase {
         String[] ordres = new String[]{
                 "5 5",
                 "1 1 N",
-                "GGDDAADDAAG",
+                "GGDDAADDAAGA",
                 "1 1 N",
-                "G",
-                "1 1 S",
+                "GA",
+                "1 2 S",
                 "AAAAAAAA"
         };
         List<String> positions = Execution.instance().executer(Arrays.asList(ordres));
         List<String> attendu = new ArrayList<String>();
-        attendu.add("1 1 E");
-        attendu.add("1 1 O");
+        attendu.add("2 1 E");
+        attendu.add("0 1 O");
         attendu.add("1 0 S");
         assertEquals(attendu, positions);
 
@@ -89,5 +101,28 @@ public class TestExecution extends TestCase {
         attendu.add("1 3 N");
         attendu.add("5 1 E");
         assertEquals(attendu, positions);
+    }
+
+    @Test
+    public void testMainExecute() {
+        testMainFail(null);
+        testMainFail(new String[]{});
+        testMainFail(new String[]{"test"});
+        testMainFail(new String[]{"1", "2", "3", "4", "N"});
+        try {
+            Execution.main(new String[]{"5", "5", "3", "4", "N", "AGDDGA"});
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    private void testMainFail(String[] args) {
+        try {
+            Execution.main(args);
+        } catch (TondeuseFormatException e) {
+            return;
+        }
+        fail();
     }
 }

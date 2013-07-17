@@ -6,6 +6,8 @@
     <version>01.00.00</version>
     <packaging>jar</packaging>
 
+    <!-- pour générer le rapport cobertura : mvn clean cobertura:cobertura -->
+    <!-- pour générer le jar avec les dépendances incluses : mvn clean compile assembly:single -->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

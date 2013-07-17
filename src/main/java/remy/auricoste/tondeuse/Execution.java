@@ -1,6 +1,7 @@
 package remy.auricoste.tondeuse;
 
 import remy.auricoste.tondeuse.exception.TondeuseFormatException;
+import remy.auricoste.tondeuse.exception.TondeusePositionException;
 import remy.auricoste.tondeuse.modele.Pelouse;
 import remy.auricoste.tondeuse.modele.Tondeuse;
 import remy.auricoste.tondeuse.wrapper.PelouseWrapper;
@@ -72,6 +73,11 @@ public class Execution {
             pair = !pair;
             if (pair) {
                 tondeuseWrapper = new TondeuseWrapper(instruction);
+                try {
+                    pelouseWrapper.getPelouse().ajouterTondeuse(tondeuseWrapper.getTondeuse());
+                } catch (TondeusePositionException e) {
+                    throw new RuntimeException(e);
+                }
             } else {
                 ordonner(instruction);
                 retour.add(tondeuseWrapper.toString());
@@ -80,10 +86,26 @@ public class Execution {
         return retour;
     }
 
-    public static void main(String args[]) {
-        if (args.length < 6) {
-            System.out.println("Il doit y avoir au moins 6 arguments");
-            System.exit(1);
+    public static void execute(String[] args) {
+        try {
+            List<String> instructions = parseArgs(args);
+            System.out.println("instructions :");
+            for (String instruction : instructions) {
+                System.out.println(instruction);
+            }
+            System.out.println("resultats :");
+            for (String retour : Execution.instance().executer(instructions)) {
+                System.out.println(retour);
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            throw e;
+        }
+    }
+
+    private static List<String> parseArgs(String[] args) {
+        if (args == null || args.length < 6) {
+            throw new TondeuseFormatException("Il doit y avoir au moins 6 arguments");
         }
         List<String> instructions = new ArrayList<String>();
         instructions.add(args[0] + " " + args[1]);
@@ -91,13 +113,10 @@ public class Execution {
             instructions.add(args[i] + " " + args[i + 1] + " " + args[i + 2]);
             instructions.add(args[i + 3]);
         }
-        System.out.println("instructions :");
-        for (String instruction : instructions) {
-            System.out.println(instruction);
-        }
-        System.out.println("resultats :");
-        for (String retour : Execution.instance().executer(instructions)) {
-            System.out.println(retour);
-        }
+        return instructions;
+    }
+
+    public static void main(String args[]) {
+        Execution.execute(args);
     }
 }
